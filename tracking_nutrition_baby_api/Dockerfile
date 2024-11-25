@@ -12,4 +12,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD exec gunicorn 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 run:app
+CMD ["uvicorn", "run:app", "--host", "0.0.0.0", "--port", "8080"]
