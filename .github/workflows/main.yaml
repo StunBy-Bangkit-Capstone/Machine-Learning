@@ -7,37 +7,33 @@ on:
 
 jobs:
   deploy-measure:
-    name: Deploy Measure Service
+    name: Deploy Measure Workflow
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Trigger deploy-measure workflow
+      - name: Trigger Deploy Measure Workflow
         uses: actions/github-script@v6
         with:
           script: |
-            github.actions.createWorkflowDispatch({
+            const workflow_id = "deploy-measure.yml";
+            github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: "deploy-measure.yml",
-              ref: context.ref
-            })
+              workflow_id,
+              ref: "deploy"
+            });
 
   deploy-tracking:
-    name: Deploy Tracking Service
+    name: Deploy Tracking Workflow
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Trigger deploy-tracking workflow
+      - name: Trigger Deploy Tracking Workflow
         uses: actions/github-script@v6
         with:
           script: |
-            github.actions.createWorkflowDispatch({
+            const workflow_id = "deploy-tracking.yml";
+            github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: "deploy-tracking.yml",
-              ref: context.ref
-            })
+              workflow_id,
+              ref: "deploy"
+            });
