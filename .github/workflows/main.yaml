@@ -14,7 +14,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const workflow_id = "deploy-measure.yml";
+            const workflow_id = "measure.yml";
             github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -30,7 +30,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const workflow_id = "deploy-tracking.yml";
+            const workflow_id = "tracking.yml";
             github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
