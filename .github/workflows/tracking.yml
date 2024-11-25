@@ -29,6 +29,7 @@ jobs:
 
       - name: Build Docker image
         run: |
+          cd tracking_nutrition_baby_api
           docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/track:$GITHUB_SHA .
 
       - name: Push to Google Container Registry
