@@ -1,6 +1,7 @@
 name: Deploy to cloudrun
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - tracking
