@@ -3,7 +3,7 @@ name: Deploy All Workflows
 on:
   push:
     branches:
-      - deploy
+      - main
 
 jobs:
   deploy-measure:
