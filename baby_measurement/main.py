@@ -112,5 +112,5 @@ if __name__ == '__main__':
         except Exception as e:
             return jsonify({'error': str(e)}), 400
 
-    app.run(port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
     
