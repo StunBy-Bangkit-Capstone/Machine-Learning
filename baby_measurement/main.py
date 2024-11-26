@@ -1,6 +1,7 @@
 import requests
 from io import BytesIO
 import cv2
+import os
 import numpy as np
 from ultralytics import YOLO
 from flask import Flask, request, jsonify
@@ -112,5 +113,8 @@ if __name__ == '__main__':
         except Exception as e:
             return jsonify({'error': str(e)}), 400
 
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port, debug=True)
+
     
