@@ -31,7 +31,6 @@ jobs:
         run: |
           cd baby_measurement
           docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/measure:$GITHUB_SHA .
-          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/measure:$GITHUB_SHA
 
       - name: Push to Google Container Registry
         run: |
