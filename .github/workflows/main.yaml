@@ -1,0 +1,39 @@
+name: Deploy All Workflows
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-measure:
+    name: Deploy Measure Workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Deploy Measure Workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const workflow_id = "measure.yml";
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id,
+              ref: "deploy"
+            });
+
+  deploy-tracking:
+    name: Deploy Tracking Workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Deploy Tracking Workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const workflow_id = "tracking.yml";
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id,
+              ref: "deploy"
+            });
