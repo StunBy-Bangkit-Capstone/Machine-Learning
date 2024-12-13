@@ -9,10 +9,12 @@ This repository contains machine learning models and implementations for the Stu
 - [Food Recommendation & Tracking](#food-recommendation--tracking)
 - [Chatbot with Vertex AI & RAG (Retrieval Augmented Generation)](#chatbot-with-vertex-ai--rag-retrieval-augmented-generation)
 - [API Machine Learning Documentation](#api-machine-learning-documentation)
+  - [How to Run](#how-to-run)
   - [Measure Classify](#measure-classify)
   - [Predict Nutrition](#predict-nutrition)
   - [Add Food Tracking](#add-food-tracking)
   - [Recommendation Food](#recommendation-food)
+- [Contributors](#contributors)
 
 
 ## Baby Height Detection
