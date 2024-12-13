@@ -1,8 +1,9 @@
 # Machine Learning
 
-This repository contains machine learning models and implementations for the StunBy application, which focuses on combating stunting through innovative technology.  
+This repository contains machine learning models and implementations for the StunBy application, which focuses on combating stunting through innovative technology.
 
 ## Table of Contents
+
 - [Baby Height Detection](#baby-height-detection)
 - [Nutrition Prediction](#nutrition-prediction)
 - [Z-Score Calculation & Classification](#z-score-calculation--classification)
@@ -16,56 +17,72 @@ This repository contains machine learning models and implementations for the Stu
   - [Recommendation Food](#recommendation-food)
 - [Contributors](#contributors)
 
+## Computer Vision to Baby Height Measurement Detection
 
-## Baby Height Detection
-- **Model**: Fine-tuned YOLO on COCO dataset (people and coin classes).  
+- **Model**: Fine-tuned YOLO on COCO dataset (people and coin classes).
 - **Dataset**: [Coco dataset](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco8-pose.yaml) [Coin dataset roboflow](https://universe.roboflow.com/coinsrec/coin-recognition-u1ebb)
-- **Purpose**: Detect baby's height from images with reference to a coin for scale.  
-- **Input**: Vertical images capturing the baby from head to toe with a coin visible.  
-- **Output**: Estimated height of the baby in centimeters.  
-- **Dependencies**:  
-  - TensorFlow  
+- **Notebook**: [Notebook People detection](https://github.com/StunBy-Bangkit-Capstone/Machine-Learning/blob/main/notebook/Keypoint_YOLOv11.ipynb) [Notebook Coin detection](https://github.com/StunBy-Bangkit-Capstone/Machine-Learning/blob/main/notebook/Coin_YOLOv11.ipynb)
+- **Purpose**: Detect baby's height from images with reference to a coin for scale.
+- **Input**: Vertical images capturing the baby from head to toe with a coin visible.
+- **Output**: Estimated height of the baby in centimeters.
+- **Dependencies**:
+  - TensorFlow
   - OpenCV
   - ultralytics
-  - YOLOv11 
+  - YOLOv11
 
 ## Nutrition Prediction
-- **Model**: TensorFlow-based model for predicting nutrient requirements.  
-- **Purpose**: Calculate the daily caloric, protein, fat, and carbohydrate needs of a baby.  
-- **Input**: Age, gender, weight, height, activity level, and breastfeeding status.  
-- **Output**: Recommended daily intake of nutrients.  
-- **Dependencies**:  
-  - TensorFlow  
-  - NumPy  
-  - Pandas  
+
+- **Model**: TensorFlow-based model for predicting nutrient requirements.
+- **Dataset**: [WHO child growth standards dataset](https://github.com/StunBy-Bangkit-Capstone/Machine-Learning/blob/main/data/kebutuhan_nutrisi_baby_2th.csv)
+- **Notebook**: [Notebook](https://github.com/StunBy-Bangkit-Capstone/Machine-Learning/blob/main/notebook/predict-tracking-nutrition-baby2.ipynb)
+- **Purpose**: Calculate the daily caloric, protein, fat, and carbohydrate needs of a baby.
+- **Input**: Age, gender, weight, height, activity level, and breastfeeding status.
+- **Output**: Recommended daily intake of nutrients.
+- **Dependencies**:
+  - TensorFlow
+  - NumPy
+  - Pandas
   - Scikit-learn
+- **Model Evaluation**: </br>
+  <img width="150" alt="image" src="https://github.com/user-attachments/assets/4f92038b-89b2-4054-8f5a-4494e261e034" />
+
+  <img width="200" alt="image" src="https://github.com/user-attachments/assets/2e5d49c2-b7b5-4e3f-b59d-15d9ab535b73" />
 
 ## Z-Score Calculation & Classification
-- **Purpose**: Classify the child's growth status based on WHO Z-Score standards.  
-- **Input**: Baby's height, weight, and age.  
-- **Output**: Growth classification (e.g., normal, stunted).  
-- **Dependencies**:  
-  - NumPy  
-  - WHO child growth standards dataset  
+
+- **Purpose**: Classify the child's growth status based on WHO Z-Score standards.
+- **Dataset**: [Kementerian Kesehatan RI](https://github.com/StunBy-Bangkit-Capstone/Machine-Learning/tree/main/data/datasetbaby_klasifikasi_status)
+- **Notebook**: [Notebook](https://github.com/StunBy-Bangkit-Capstone/Machine-Learning/blob/main/notebook/NUTRITIONAL%20STATUS%20CLASSIFICATION%20Z-SCORE%20INDEX%20FOR%20INFANT.ipynb)
+- **Input**: Baby's height, weight, and age.
+- **Output**: Growth classification (e.g., normal, stunted).
+- **Dependencies**:
+  - NumPy
+  - WHO child growth standards dataset
 
 ## Food Recommendation & Tracking
-- **Model**: Content-Based and Collaborative Filtering.  
-- **Purpose**: Recommend suitable baby foods and track daily food intake.  
-- **Input**: Baby's dietary preferences, allergies, and nutrient needs.  
-- **Output**: Personalized food recommendations and intake tracking.  
-- **Dependencies**:  
-  - Scikit-Learn  
-  - Pandas  
-  - Surprise (Collaborative Filtering library)  
+
+- **Model**: Content-Based and Collaborative Filtering.
+- **Dataset**: [Baby food dataset](https://github.com/StunBy-Bangkit-Capstone/Machine-Learning/blob/main/data/rekomendasi_data_baby_food.csv)
+- **Notebook**: [Notebook](https://github.com/StunBy-Bangkit-Capstone/Machine-Learning/blob/main/notebook/REKOMENDASI_MAKANAN_Content_Based_and_Collaborative_Filtering_LinearProgramming.ipynb)
+- **Purpose**: Recommend suitable baby foods and track daily food intake.
+- **Input**: Baby's dietary preferences, allergies, and nutrient needs.
+- **Output**: Personalized food recommendations and intake tracking.
+- **Dependencies**:
+  - Scikit-Learn
+  - Pandas
+  - Surprise (Collaborative Filtering library)
 
 ## Chatbot with Vertex AI & RAG (Retrieval Augmented Generation)
-- **Model**: Retrieval-Augmented Generation using Vertex AI.  
-- **Purpose**: Provide quick responses to parenting and nutrition-related queries.  
-- **Input**: User queries about stunting, nutrition, or app features.  
-- **Output**: Conversational responses enriched with relevant information.  
-- **Dependencies**:  
-  - Vertex AI SDK  
-  - Flask (for API wrapping)  
+
+- **Model**: Retrieval-Augmented Generation using Vertex AI.
+- **Notebook**: [Notebook](https://github.com/StunBy-Bangkit-Capstone/Machine-Learning/blob/main/notebook/Generative-RAG-vertex_bangkit_stunby.ipynb)
+- **Purpose**: Provide quick responses to parenting and nutrition-related queries.
+- **Input**: User queries about stunting, nutrition, or app features.
+- **Output**: Conversational responses enriched with relevant information.
+- **Dependencies**:
+  - Vertex AI SDK
+  - Flask (for API wrapping)
 
 ## API Machine Learning Documentation
 
@@ -74,10 +91,13 @@ This repository contains machine learning models and implementations for the Stu
 1. Clone this repository.
 2. Go to the `ML_API_Integration` directory.
 3. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
+
 4. Run the API
+
 ```bash
 python app.py
 ```
@@ -278,6 +298,7 @@ RESPONSE
 ```
 
 ## Contributors
+
 - [Ridlo Abdullah Ulinnuha](https://github.com/Ridlo543)
 - [Ahmad Dzulfikar Ubaidillah](https://github.com/dzulfikarubaid)
 - [Azzahra Athifah Dzaki](https://github.com/AzzahraDzaki)
